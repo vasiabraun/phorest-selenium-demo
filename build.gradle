@@ -1,0 +1,43 @@
+/*
+ * Copyright (c) 2018  [Vasylyna Mosiievych]
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ */
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.phorest'
+version = '1.0-SNAPSHOT'
+
+description = """Selenium WebDriver kit for Phorest.com"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+
+    compile group: 'com.devskiller', name: 'jfairy', version: '0.6.2'
+
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.13.0'
+    compile group: 'org.seleniumhq.selenium', name: 'htmlunit-driver', version: '2.29.0'
+}
+
+test {
+    useTestNG()
+}
